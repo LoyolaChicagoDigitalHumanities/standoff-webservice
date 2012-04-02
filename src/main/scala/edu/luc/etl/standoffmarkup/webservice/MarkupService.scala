@@ -1,11 +1,13 @@
-package org.luc.etl.standoffmarkup.webservice
+package edu.luc.etl.standoffmarkup.webservice
 
 import cc.spray._
 
 trait MarkupService extends Directives {
 
   val markupService = get {
-
+    path("") {
+      _.complete("welcome to the standoff markup webservice")
+    } ~
     pathPrefix("languages") {
       path("") { _.complete("xhtml mathml") } ~
       pathPrefix("\\w+".r) { lang =>

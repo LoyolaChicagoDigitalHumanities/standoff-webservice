@@ -1,4 +1,4 @@
-package org.luc.etl.standoffmarkup.webservice
+package edu.luc.etl.standoffmarkup.webservice
 
 import com.thaiopensource.xml.dtd.om._
 import com.thaiopensource.xml.em.ExternalId

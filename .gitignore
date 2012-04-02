@@ -1,8 +1,25 @@
-/.idea/
-/project/boot/
-/project/plugins/project
-target/
-lib_managed/
-src_managed/
-test-output/
-*.iml
+# general
+*~
+*.log
+tmp
+
+# Eclipse
+.settings
+.cache
+.project
+.classpath
+.scala_dependencies
+bin
+
+# SBT
+dist
+project/boot
+project/target
+project/plugins/target
+target
+.target
+
+# Play
+logs
+RUNNING_PID
+dump

@@ -1,4 +1,4 @@
-package org.luc.etl.standoffmarkup.webservice
+package edu.luc.etl.standoffmarkup.webservice
 
 import org.specs2.mutable._
 import cc.spray._
@@ -9,13 +9,13 @@ import StatusCodes._
 
 class MarkupServiceSpec extends Specification with SprayTest with MarkupService {
 
-  "The HelloService" should {
+  "The standoff markup webservice" should {
     "return a greeting for GET requests to the root path" in {
       testService(HttpRequest(GET, "/")) {
         markupService
-      }.response.content.as[String] mustEqual Right("Say hello to Spray!")
+      }.response.content.as[String] mustEqual Right("welcome to the standoff markup webservice")
     }
-    "leave GET requests to other paths unhandled" in {
+    "reject GET requests to other paths" in {
       testService(HttpRequest(GET, "/kermit")) {
         markupService
       }.handled must beFalse
