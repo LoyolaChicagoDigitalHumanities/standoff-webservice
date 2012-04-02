@@ -4,7 +4,10 @@ import cc.spray._
 
 trait MarkupService extends Directives {
 
-  val markupService = get {
+  
+
+
+  val controller = get {
     path("") {
       _.complete("welcome to the standoff markup webservice")
     } ~

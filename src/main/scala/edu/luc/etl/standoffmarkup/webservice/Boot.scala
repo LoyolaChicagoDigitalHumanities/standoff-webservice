@@ -20,7 +20,7 @@ object Boot extends App {
     // bake your module cake here
   }
 
-  val httpService = actorOf(new HttpService(mainModule.markupService))
+  val httpService = actorOf(new HttpService(mainModule.controller))
   val rootService = actorOf(new SprayCanRootService(httpService))
   val sprayCanServer = actorOf(new HttpServer(new ServerConfig(host = host, port = port)))
 
