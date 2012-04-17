@@ -2,6 +2,7 @@ package edu.luc.etl.standoffmarkup.parser
 
 import com.thaiopensource.xml.dtd.om._
 import com.thaiopensource.xml.em.ExternalId
+import scala.xml.dtd.DTD
 
 object Main {
   def main(args: Array[String]) = {

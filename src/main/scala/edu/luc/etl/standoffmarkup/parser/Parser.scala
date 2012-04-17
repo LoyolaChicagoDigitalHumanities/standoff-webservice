@@ -3,7 +3,7 @@ package edu.luc.etl.standoffmarkup.parser
 import com.thaiopensource.xml.dtd.om._
 import com.thaiopensource.xml.em.ExternalId
 
-class TopLevelVisitorAdapter extends TopLevelVisitor {
+trait TopLevelVisitorAdapter extends TopLevelVisitor {
   override def attlistDecl(nameSpec: NameSpec, attributeGroup: AttributeGroup) { }
   override def attributeDefaultDef(name: String, ad: AttributeDefault) { }
   override def attributeGroupDef(name: String, attributeGroup: AttributeGroup) { }
@@ -26,7 +26,7 @@ class TopLevelVisitorAdapter extends TopLevelVisitor {
   override def processingInstruction(target: String, value: String) { }
 }
 
-class ModelGroupVisitorAdapter extends ModelGroupVisitor {
+trait ModelGroupVisitorAdapter extends ModelGroupVisitor {
   override def any() { }
   override def choice(members: Array[ModelGroup]) { }
   override def elementRef(name: NameSpec) { }
@@ -38,12 +38,12 @@ class ModelGroupVisitorAdapter extends ModelGroupVisitor {
   override def zeroOrMore(member: ModelGroup) { }
 }
 
-class AttributeGroupVisitorAdapter extends AttributeGroupVisitor {
+trait AttributeGroupVisitorAdapter extends AttributeGroupVisitor {
   override def attribute(nameSpec: NameSpec, datatype: Datatype, attributeDefault: AttributeDefault) { }
   override def attributeGroupRef(name: String, attributeGroup: AttributeGroup) { }
 }
 
-class DatatypeVisitorAdapter extends DatatypeVisitor {
+trait DatatypeVisitorAdapter extends DatatypeVisitor {
   override def cdataDatatype() { }
   override def datatypeRef(name: String, datatype: Datatype) { }
   override def enumDatatype(enumGroup: EnumGroup) { }
@@ -51,23 +51,23 @@ class DatatypeVisitorAdapter extends DatatypeVisitor {
   override def tokenizedDatatype(typeName: String) { }
 }
 
-class EnumGroupVisitorAdapter extends EnumGroupVisitor {
+trait EnumGroupVisitorAdapter extends EnumGroupVisitor {
   override def enumGroupRef(name: String, enumGroup: EnumGroup) { }
   override def enumValue(value: String) { }
 }
 
-class FlagVisitorAdapter extends FlagVisitor {
+trait FlagVisitorAdapter extends FlagVisitor {
   override def flagRef(name: String, flag: Flag) { }
   override def ignore() { }
   override def include() { }
 }
 
-class NameSpecVisitorAdapter extends NameSpecVisitor {
+trait NameSpecVisitorAdapter extends NameSpecVisitor {
   override def name(value: String) { }
   override def nameSpecRef(name: String, nameSpec: NameSpec) { }
 }
 
-class AttributeDefaultVisitorAdapter extends AttributeDefaultVisitor {
+trait AttributeDefaultVisitorAdapter extends AttributeDefaultVisitor {
   override def attributeDefaultRef(name: String, ad: AttributeDefault) { }
   override def defaultValue(value: String) { }
   override def fixedValue(value: String) { }
@@ -75,7 +75,7 @@ class AttributeDefaultVisitorAdapter extends AttributeDefaultVisitor {
   override def requiredValue() { }
 }
 
-class ModelGroupConverter() extends ModelGroupVisitorAdapter {
+trait ModelGroupConverter extends ModelGroupVisitorAdapter {
   override def any() { }
   override def choice(members: Array[ModelGroup]) { }
   override def elementRef(name: NameSpec) { }
