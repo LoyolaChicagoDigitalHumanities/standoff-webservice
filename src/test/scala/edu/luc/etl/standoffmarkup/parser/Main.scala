@@ -1,4 +1,5 @@
-package edu.luc.etl.standoffmarkup.parser
+package edu.luc.etl.standoffmarkup
+package parser
 
 import com.thaiopensource.xml.dtd.om._
 import com.thaiopensource.xml.em.ExternalId

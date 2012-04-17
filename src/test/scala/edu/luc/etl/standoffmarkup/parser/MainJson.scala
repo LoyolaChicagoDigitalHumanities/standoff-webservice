@@ -1,4 +1,5 @@
-package edu.luc.etl.standoffmarkup.parser
+package edu.luc.etl.standoffmarkup
+package parser
 
 object MainJson {
   def main(args: Array[String]) = {

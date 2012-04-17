@@ -1,11 +1,9 @@
-package edu.luc.etl.standoffmarkup.webservice
+package edu.luc.etl.standoffmarkup
+package webservice
 
 import cc.spray._
 
 trait MarkupService extends Directives {
-
-  
-
 
   val controller = get {
     path("") {

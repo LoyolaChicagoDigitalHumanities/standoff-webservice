@@ -1,4 +1,5 @@
-package edu.luc.etl.standoffmarkup.webservice
+package edu.luc.etl.standoffmarkup
+package webservice
 
 import org.slf4j.LoggerFactory
 
